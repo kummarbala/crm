@@ -43,7 +43,7 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form class="form-horizontal" id="addorderacknowledgement" method="POST"
-                            action=" <?php echo e(route('addorderacknowledgementsubmit')); ?>">
+                            action=" <?php echo e(route('editorderacknowledgementsubmit',[$editOrderacknowledgementData->orderAckId])); ?>">
                             <?php echo e(csrf_field()); ?>
 
                             <div class="card-body">
@@ -286,7 +286,7 @@
                                                 <td><?php echo e($editOaProduct['description']); ?><input type="hidden" class="description" name="description[]" value="<?php echo e($editOaProduct['description']); ?>"></td>
                                                 <td><?php echo e($editOaProduct['drawingNo']); ?><input type="hidden" class="drawingNo" name="drawingNo[]" value="<?php echo e($editOaProduct['drawingNo']); ?>"></td>
                                                 <td><?php echo e($editOaProduct['material']); ?><input type="hidden" class="material" name="material[]" value="<?php echo e($editOaProduct['material']); ?>"></td>
-                                                <td><input type="date" class="dueDate form-control" name="dueDate[]" value="<?php echo date('m/d/Y', strtotime($editOaProduct['dueDate'])) ?>"></td>
+                                                <td><input type="date" class="form-control" id="dueDate" name="dueDate[]" value="<?php echo e($editOaProduct['dueDate']); ?>"></td>
                                                 <td><?php echo e($editOaProduct['quantity']); ?><input type="hidden" class="quantity" name="quantity[]" value="<?php echo e($editOaProduct['quantity']); ?>"></td>
                                                 <td><?php echo e($editOaProduct['rate']); ?><input type="hidden" class="rate" name="rate[]" value="<?php echo e($editOaProduct['rate']); ?>"></td>
                                                 <td><?php echo e($editOaProduct['per']); ?><input type="hidden" class="per" name="per[]" value="<?php echo e($editOaProduct['per']); ?>"></td>

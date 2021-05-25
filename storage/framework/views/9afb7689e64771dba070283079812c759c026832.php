@@ -69,7 +69,7 @@
                                                 href="<?php echo e(route('editorderacknowledgement',[$orderacknowledgements->orderAckId])); ?>"
                                                 class="actionbutwrapper" title="Edit"><i
                                                     class="fas fa-edit actionbuttonsize"></i></a><a
-                                                href="<?php echo e(route('deletequotation',[$orderacknowledgements->orderAckId])); ?>"
+                                                href="<?php echo e(route('deleteorderacknowledgement',[$orderacknowledgements->orderAckId])); ?>"
                                                 class="actionbutwrapper " id="<?php echo e($orderacknowledgements->orderAckId); ?>"
                                                 onclick="return confirm('Are you sure you want to delete this Order Acknowledgements?');"
                                                 title="Delete"><i

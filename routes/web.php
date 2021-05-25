@@ -70,6 +70,8 @@ Route::get('/orderacknowledgements.html', ['middleware' => 'auth', 'uses' => 'Or
 Route::match(array('GET', 'POST'), 'addorderacknowledgement.html', ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@addOrderacknowledgement'])->name('addorderacknowledgement');
 Route::match(array('GET', 'POST'), 'addorderacknowledgementsubmit.html', ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@addOrderacknowledgementSubmit'])->name('addorderacknowledgementsubmit');
 Route::match(array('GET', 'POST'), 'editorderacknowledgement.html/{orderAckId}', ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@editOrderacknowledgement'])->name('editorderacknowledgement');
+Route::match(array('GET', 'POST'), 'editorderacknowledgementsubmit.html/{orderAckId}', ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@editOrderacknowledgementSubmit'])->name('editorderacknowledgementsubmit');
+Route::match(array('GET', 'POST'), 'deleteorderacknowledgement.html/{orderAckId}', ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@deleteOrderacknowledgement'])->name('deleteorderacknowledgement');
 
 
 // other Ajaxx call in Order Ack page

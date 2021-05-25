@@ -181,24 +181,77 @@ class OrderAcknowledgementController extends Controller
     public function editOrderacknowledgementSubmit($orderAckId)
     {
         try{
-            $editOrderacknowledgement = quotations::find($quotationId);
+            $editOrderacknowledgement = orderacknowledgement::find($orderAckId);
             $editOrderacknowledgement->ctsYear         = Request::get('ctsYear');
-            $editOrderacknowledgement->ctsRef          = Request::get('ctsRef');
-            $editOrderacknowledgement->referenceNo     = Request::get('referenceNo');
-            $editOrderacknowledgement->ctsDate         = Request::get('ctsDate');
-            $editOrderacknowledgement->enquiryRef      = Request::get('enquiryRef');
-            $editOrderacknowledgement->contactPerson   = Request::get('contactPerson');
-            $editOrderacknowledgement->enquiryDate     = Request::get('enquiryDate');
-            $editOrderacknowledgement->dueDate         = Request::get('dueDate');
-            $editOrderacknowledgement->notes           = Request::get('notes');
-            $editOrderacknowledgement->subRequirement  = Request::get('subRequirement');
+            $editOrderacknowledgement->orderAckNo          = Request::get('orderAckNo');
+            $editOrderacknowledgement->orderDate     = Request::get('orderDate');
+            $editOrderacknowledgement->poNo         = Request::get('poNo');
+            $editOrderacknowledgement->enquireyNo      = Request::get('enquireyNo');
+            $editOrderacknowledgement->priceBasis   = Request::get('priceBasis');
+            $editOrderacknowledgement->modeDespatch     = Request::get('modeDespatch');
+            $editOrderacknowledgement->destination         = Request::get('destination');
+            $editOrderacknowledgement->freightDetails           = Request::get('freightDetails');
+            $editOrderacknowledgement->consignee  = Request::get('consignee');
+            $editOrderacknowledgement->packingForward  = Request::get('packingForward');
+            $editOrderacknowledgement->terms  = Request::get('terms');
+            $editOrderacknowledgement->contactPerson  = Request::get('contactPerson');
+            $editOrderacknowledgement->note  = Request::get('note');
             $editOrderacknowledgement->updatedAt       = date('Y-m-d H:i:s');
+
+            if($editOrderacknowledgement->save()){
+                $productDelete      =  oaproducts::where('orderAckId','=',$orderAckId)->delete();
+                $description        = Request::get('description');
+                $drawingNo          = Request::get('drawingNo');
+                $material           = Request::get('material');
+                $dueDate            = Request::get('dueDate');
+                $quantity           = Request::get('quantity');
+                $rate               = Request::get('rate');
+                $per                = Request::get('per');
+                $unit               = Request::get('unit');                
+                $total              = Request::get('total');  
+                if(sizeof($description) >0 ){
+                    for($i=0;$i<sizeof($description);$i++){
+                        $oaProducts = array();
+                        $oaProducts['orderAckId']     = $orderAckId;
+                        $oaProducts['description']    = $description[$i];
+                        $oaProducts['drawingNo']      = $drawingNo[$i];
+                        $oaProducts['material']       = $material[$i];
+                        $oaProducts['dueDate']        = $dueDate[$i];
+                        $oaProducts['quantity']       = $quantity[$i];                        
+                        $oaProducts['rate']           = $rate[$i];
+                        $oaProducts['per']            = $per[$i];
+                        $oaProducts['unit']           = $unit[$i];
+                        $oaProducts['total']          = $total[$i];
+                        $oaProducts['createdAt']      = date('Y-m-d H:i:s');
+                        $oaProducts['updatedAt']      = date('Y-m-d H:i:s');
+                        $lastInsertedAaProducts = oaproducts::create($oaProducts);                        
+                    }
+                    if($orderAckId){
+                        return redirect('/orderacknowledgements.html')
+                        ->with('success',"Order Acknowledgement updated successfully");
+                    }
+                } 
+            }
+       
+            
         }catch (\Exception $e) {
             DB::rollback();
             // something went wrong
             echo $e->getMessage();  
         }
 
+    }
+
+    // Delete Quotation
+    public function deleteOrderacknowledgement($orderAckId)
+    {
+        $deleteOAData = orderacknowledgement::find($orderAckId);
+        $deleteQuotationProductData = oaproducts::where('orderAckId','=',$orderAckId)->delete();
+        if($deleteOAData->delete() ){
+            return redirect('/orderacknowledgements.html')
+            ->with('success',"Order Acknowledgement deleted successfully");
+
+        }
     }
 
     public function getOrdeDdetailsByQuotationId()

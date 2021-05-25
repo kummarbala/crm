@@ -71,7 +71,7 @@
                                                 href="{{ route('editorderacknowledgement',[$orderacknowledgements->orderAckId]) }}"
                                                 class="actionbutwrapper" title="Edit"><i
                                                     class="fas fa-edit actionbuttonsize"></i></a><a
-                                                href="{{ route('deletequotation',[$orderacknowledgements->orderAckId]) }}"
+                                                href="{{ route('deleteorderacknowledgement',[$orderacknowledgements->orderAckId]) }}"
                                                 class="actionbutwrapper " id="{{$orderacknowledgements->orderAckId}}"
                                                 onclick="return confirm('Are you sure you want to delete this Order Acknowledgements?');"
                                                 title="Delete"><i

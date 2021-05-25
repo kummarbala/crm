@@ -45,7 +45,7 @@
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form class="form-horizontal" id="addorderacknowledgement" method="POST"
-                            action=" {{ route('addorderacknowledgementsubmit') }}">
+                            action=" {{ route('editorderacknowledgementsubmit',[$editOrderacknowledgementData->orderAckId]) }}">
                             {{ csrf_field() }}
                             <div class="card-body">
                                 <div class="col-sm-12">
@@ -287,7 +287,7 @@
                                                 <td>{{$editOaProduct['description']}}<input type="hidden" class="description" name="description[]" value="{{$editOaProduct['description']}}"></td>
                                                 <td>{{$editOaProduct['drawingNo']}}<input type="hidden" class="drawingNo" name="drawingNo[]" value="{{$editOaProduct['drawingNo']}}"></td>
                                                 <td>{{$editOaProduct['material']}}<input type="hidden" class="material" name="material[]" value="{{$editOaProduct['material']}}"></td>
-                                                <td><input type="date" class="dueDate form-control" name="dueDate[]" value="@php echo date('m/d/Y', strtotime($editOaProduct['dueDate'])) @endphp"></td>
+                                                <td><input type="date" class="form-control" id="dueDate" name="dueDate[]" value="{{$editOaProduct['dueDate']}}"></td>
                                                 <td>{{$editOaProduct['quantity']}}<input type="hidden" class="quantity" name="quantity[]" value="{{$editOaProduct['quantity']}}"></td>
                                                 <td>{{$editOaProduct['rate']}}<input type="hidden" class="rate" name="rate[]" value="{{$editOaProduct['rate']}}"></td>
                                                 <td>{{$editOaProduct['per']}}<input type="hidden" class="per" name="per[]" value="{{$editOaProduct['per']}}"></td>
