@@ -76,8 +76,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item @if($page === '') active @endif">
-                    <a href="{{ route('annexures') }}" class="nav-link">
+                <li class="nav-item @if($page === 'deliverychallan') active @endif">
+                    <a href="{{ route('deliverychallans') }}" class="nav-link">
                         <i class="nav-icon far fa-clipboard"></i>
                         <p>
                         Delivery challan

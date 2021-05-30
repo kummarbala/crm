@@ -76,8 +76,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item <?php if($page === ''): ?> active <?php endif; ?>">
-                    <a href="<?php echo e(route('annexures')); ?>" class="nav-link">
+                <li class="nav-item <?php if($page === 'deliverychallan'): ?> active <?php endif; ?>">
+                    <a href="<?php echo e(route('deliverychallans')); ?>" class="nav-link">
                         <i class="nav-icon far fa-clipboard"></i>
                         <p>
                         Delivery challan

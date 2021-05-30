@@ -78,6 +78,21 @@ Route::match(array('GET', 'POST'), 'deleteorderacknowledgement.html/{orderAckId}
 Route::match(array('GET', 'POST'), 'getorderdetailsbyquotationid.html',  ['middleware' => 'auth', 'uses' => 'OrderAcknowledgementController@getOrdeDdetailsByQuotationId'])->name('getorderdetailsbyquotationid');
 
 
+// Delivery Challan Controller
+Route::get('/deliverychallans.html', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@index'])->name('deliverychallans');
+Route::match(array('GET', 'POST'), 'adddeliverychallan.html', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@addDeliveryChallan'])->name('adddeliverychallan');
+Route::match(array('GET', 'POST'), 'adddeliverychallansubmit.html', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@addDeliveryChallanSubmit'])->name('adddeliverychallansubmit');
+Route::match(array('GET', 'POST'), 'editdeliverychallan.html/{deliveryChallanId}', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@editDeliveryChallan'])->name('editdeliverychallan');
+Route::match(array('GET', 'POST'), 'editdeliverychallansubmit.html/{deliveryChallanId}', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@editDeliveryChallanSubmit'])->name('editdeliverychallansubmit');
+Route::match(array('GET', 'POST'), 'deletedeliverychallan.html/{deliveryChallanId}', ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@deleteDeliveryChallan'])->name('deletedeliverychallan');
+
+
+
+// other Ajaxx call in Delivery Challan page
+Route::match(array('GET', 'POST'), 'getorderdetailsbyackno.html',  ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@getOrderDetailsByAckNo'])->name('getorderdetailsbyackno');
+
+
+
 
 
 
