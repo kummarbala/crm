@@ -92,6 +92,22 @@ Route::match(array('GET', 'POST'), 'deletedeliverychallan.html/{deliveryChallanI
 Route::match(array('GET', 'POST'), 'getorderdetailsbyackno.html',  ['middleware' => 'auth', 'uses' => 'DeliveryChallanController@getOrderDetailsByAckNo'])->name('getorderdetailsbyackno');
 
 
+// Despatch Advice Controller
+Route::get('/despatchadvices.html', ['middleware' => 'auth', 'uses' => 'DespatchAdviceController@index'])->name('despatchadvices');
+
+
+// Invoice Controller
+Route::get('/invoices.html', ['middleware' => 'auth', 'uses' => 'InvoiceController@index'])->name('invoices');
+Route::match(array('GET', 'POST'), 'addinvoice.html', ['middleware' => 'auth', 'uses' => 'InvoiceController@addInvoice'])->name('addinvoice');
+
+
+
+// other Ajaxx call in Invoice page
+Route::match(array('GET', 'POST'), 'getdcdetailsbychallan.html',  ['middleware' => 'auth', 'uses' => 'InvoiceController@getDcDetailsByChallan'])->name('getdcdetailsbychallan');
+
+
+
+
 
 
 

@@ -84,16 +84,16 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item <?php if($page === ''): ?> active <?php endif; ?>">
-                    <a href="<?php echo e(route('annexures')); ?>" class="nav-link">
+                <li class="nav-item <?php if($page === 'despatchadvice'): ?> active <?php endif; ?>">
+                    <a href="<?php echo e(route('despatchadvices')); ?>" class="nav-link">
                         <i class="nav-icon fab fa-tripadvisor"></i>
                         <p>
                         Despatch Advice
                         </p>
                     </a>
                 </li>
-                <li class="nav-item <?php if($page === ''): ?> active <?php endif; ?>">
-                    <a href="<?php echo e(route('annexures')); ?>" class="nav-link">
+                <li class="nav-item <?php if($page === 'invoice'): ?> active <?php endif; ?>">
+                    <a href="<?php echo e(route('invoices')); ?>" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice"></i>
                         <p>
                         Invoice

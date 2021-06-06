@@ -84,16 +84,16 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item @if($page === '') active @endif">
-                    <a href="{{ route('annexures') }}" class="nav-link">
+                <li class="nav-item @if($page === 'despatchadvice') active @endif">
+                    <a href="{{ route('despatchadvices') }}" class="nav-link">
                         <i class="nav-icon fab fa-tripadvisor"></i>
                         <p>
                         Despatch Advice
                         </p>
                     </a>
                 </li>
-                <li class="nav-item @if($page === '') active @endif">
-                    <a href="{{ route('annexures') }}" class="nav-link">
+                <li class="nav-item @if($page === 'invoice') active @endif">
+                    <a href="{{ route('invoices') }}" class="nav-link">
                         <i class="nav-icon fas fa-file-invoice"></i>
                         <p>
                         Invoice
