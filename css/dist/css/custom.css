@@ -120,3 +120,26 @@ table.table-bordered td {
     position: absolute;
     width: 1px;
 }
+
+.amt-label {
+    font-weight: bold;
+    color: green;
+    text-align: right;
+    width: 62.5%;
+}
+
+.amt-data {
+    font-weight: bold;
+    text-align: right;
+    background-color: #605ca8;
+    color: #fff;
+}
+
+.extra-charges {
+    padding: 7px !important;
+    width: 18.7%;
+}
+
+.extra-charges input {
+    height: 31px;
+}

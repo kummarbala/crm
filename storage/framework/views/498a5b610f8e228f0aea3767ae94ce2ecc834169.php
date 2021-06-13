@@ -33,9 +33,9 @@
                                 <div class="col-sm-6">
                                     <h3 class="card-title pTop10">Add Invoice</h3>
                                 </div>
-                                <div class="col-sm-6 float-right"> <a
-                                        href="<?php echo e(route('invoices')); ?>"><button type="button"
-                                            class="btn btn-warning float-right"><i class="fas fa-hand-point-left"></i>
+                                <div class="col-sm-6 float-right"> <a href="<?php echo e(route('invoices')); ?>"><button
+                                            type="button" class="btn btn-warning float-right"><i
+                                                class="fas fa-hand-point-left"></i>
                                             Back to
                                             Invoices</button></a></div>
                             </div>
@@ -55,8 +55,8 @@
                                                     <label for="challanNo" class="col-sm-2 col-form-label">Challan No
                                                     </label>
                                                     <div class="col-sm-9">
-                                                        <select class="form-control" style="width: 100%;"
-                                                            id="challanNo" name="challanNo">
+                                                        <select class="form-control" style="width: 100%;" id="challanNo"
+                                                            name="challanNo">
                                                             <option value="" selected="selected">Select a Chellan No
                                                             </option>
                                                             <?php $__currentLoopData = $invoiceData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $invoice): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -66,19 +66,20 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="form-group row">
                                                     <label for="challanNo" class="col-sm-2 col-form-label">Dc Date
                                                     </label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="challanNo"
-                                                            name="challanNo" placeholder="Customer Name" value="<?php echo e($challanNo); ?>">
-                                                        
+                                                            name="challanNo" placeholder="Customer Name"
+                                                            value="<?php echo e($challanNo); ?>">
+
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="ctsYear" class="col-sm-2 col-form-label">Ack No
-                                                        </label>
+                                                    </label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="orderAckNo"
                                                             name="orderAckNo" placeholder="Ack No" value="">
@@ -86,14 +87,15 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <label for="ctsYear" class="col-sm-2 col-form-label">CTS Year
-                                                        </label>
+                                                    </label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="ctsYear"
                                                             name="ctsYear" placeholder="CTS Year" value="">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="customerId" class="col-sm-2 col-form-label">Customer Name</label>
+                                                    <label for="customerId" class="col-sm-2 col-form-label">Customer
+                                                        Name</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="customerName"
                                                             name="customerName" placeholder="Customer Name" value="">
@@ -101,7 +103,7 @@
                                                             name="customerId" placeholder="customerId" value="">
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="form-group row">
                                                     <label for="poNo" class="col-sm-2 col-form-label">P.O. Ref
                                                     </label>
@@ -109,43 +111,46 @@
                                                         <input type="text" class="form-control" id="poNo" name="poNo"
                                                             placeholder="P.O. No / Date">
                                                     </div>
-                                                </div>                                                
+                                                </div>
                                                 <div class="form-group row">
                                                     <label for="gstNo" class="col-sm-2 col-form-label">GST No
-                                                        </label>
+                                                    </label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" id="gstNo"
-                                                            name="gstNo" placeholder="GST No">
+                                                        <input type="text" class="form-control" id="gstNo" name="gstNo"
+                                                            placeholder="GST No">
                                                     </div>
                                                 </div>
-                                                
-                                                
-                                                
+
+
+
                                             </div>
                                             <div class="col-sm-6">
-                                            <div class="form-group row">
-                                                    <label for="modeDespatch" class="col-sm-2 col-form-label">Despatch Details</label>
+                                                <div class="form-group row">
+                                                    <label for="modeDespatch" class="col-sm-2 col-form-label">Despatch
+                                                        Details</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="modeDespatch"
                                                             name="modeDespatch" placeholder="Mode of Despatch">
                                                     </div>
                                                 </div>
-                                            <div class="form-group row">
-                                                    <label for="invoiceNo" class="col-sm-2 col-form-label">Invoice No</label>
+                                                <div class="form-group row">
+                                                    <label for="invoiceNo" class="col-sm-2 col-form-label">Invoice
+                                                        No</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="invoiceNo"
                                                             name="invoiceNo" placeholder="Invoice No">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="invoiceDate"
-                                                        class="col-sm-2 col-form-label">Invoice Date</label>
-                                                        <div class="col-sm-9">
+                                                    <label for="invoiceDate" class="col-sm-2 col-form-label">Invoice
+                                                        Date</label>
+                                                    <div class="col-sm-9">
                                                         <div class="input-group date" id="invoiceDate"
                                                             data-target-input="nearest">
                                                             <input type="text" class="form-control datetimepicker-input"
-                                                                data-target="#invoiceDate" name="invoiceDate" placeholder="DC Date"
-                                                                data-toggle="datetimepicker" value="" />
+                                                                data-target="#invoiceDate" name="invoiceDate"
+                                                                placeholder="DC Date" data-toggle="datetimepicker"
+                                                                value="" />
                                                             <div class="input-group-append" data-target="#invoiceDate"
                                                                 data-toggle="datetimepicker">
                                                                 <div class="input-group-text"><i
@@ -155,19 +160,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="vendorCode" class="col-sm-2 col-form-label">Vendor Code</label>
+                                                    <label for="vendorCode" class="col-sm-2 col-form-label">Vendor
+                                                        Code</label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" class="form-control" id="vendorCode" name="vendorCode" 
-                                                            placeholder="Vendor Code">
+                                                        <input type="text" class="form-control" id="vendorCode"
+                                                            name="vendorCode" placeholder="Vendor Code">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="rrLrNo" class="col-sm-2 col-form-label">Docs Negotion</label>
+                                                    <label for="rrLrNo" class="col-sm-2 col-form-label">Docs
+                                                        Negotion</label>
                                                     <div class="col-sm-9">
                                                         <input type="text" class="form-control" id="rrLrNo"
                                                             name="rrLrNo" placeholder="Docs Negotion">
                                                     </div>
-                                                </div>                                                
+                                                </div>
                                                 <div class="form-group row">
                                                     <label for="contactPerson" class="col-sm-2 col-form-label">Contact
                                                         Person</label>
@@ -176,7 +183,7 @@
                                                             name="contactPerson" placeholder="Conatct Person">
                                                     </div>
                                                 </div>
-                                                
+
 
                                             </div>
 
@@ -219,11 +226,11 @@
                                                 <th style="width:30%">Description / Drawing No</th>
                                                 <th style="width:10%">HSN No</th>
                                                 <th style="width:10%">Material</th>
-                                                <th style="width:5%">Qty</th>                                                
+                                                <th style="width:5%">Qty</th>
                                                 <th style="width:10%">Rate</th>
                                                 <th style="width:5%">Unit</th>
                                                 <th style="width:10%">Total</th>
-                                                <th style="width:10%">Remarks</th>                                                
+
                                             </tr>
                                         </thead>
                                         <tbody id="productItem">
@@ -235,11 +242,15 @@
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
-                                                <td></td>
+
 
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <table id="invoiceAmtData" class="table table-bordered table-striped"></table>
+                                    <div class="form-group row" id="priceInwords">
+                                                
+                                            </div>
 
                                 </div>
                                 <br />
@@ -325,8 +336,9 @@
                                                         placeholder="0.00">
                                                 </div>
                                             </div>
-
+                                            
                                         </div>
+                                        
                                     </form>
 
                                 </div>
@@ -335,6 +347,7 @@
                                     <button type="button" class="btn btn-primary float-right"
                                         id="productAdd">Submit</button>
                                 </div>
+                                
                             </div>
                             <!-- /.modal-content -->
                         </div>

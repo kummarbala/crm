@@ -104,7 +104,7 @@ Route::match(array('GET', 'POST'), 'addinvoice.html', ['middleware' => 'auth', '
 
 // other Ajaxx call in Invoice page
 Route::match(array('GET', 'POST'), 'getdcdetailsbychallan.html',  ['middleware' => 'auth', 'uses' => 'InvoiceController@getDcDetailsByChallan'])->name('getdcdetailsbychallan');
-
+Route::match(array('GET', 'POST'), 'currencystring.html',  ['middleware' => 'auth', 'uses' => 'InvoiceController@currencyString'])->name('currencystring');
 
 
 
